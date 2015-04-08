@@ -1,0 +1,12 @@
+/*§
+  This is just another dummy license! ^__^
+  For product: Special product.
+  Copyright holder: Special copyright holder.
+  Copyright years: %%%COPYRIGHT_YEARS%%%.
+*/
+
+package gamma;
+
+class Omicron {
+
+}

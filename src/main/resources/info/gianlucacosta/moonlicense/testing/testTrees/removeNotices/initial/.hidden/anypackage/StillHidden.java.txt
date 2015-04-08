@@ -1,0 +1,11 @@
+/*§
+Any license
+*/
+
+
+package anypackage;
+
+//This source file must stay unchanged as well
+class MyClass {
+
+}

@@ -1,0 +1,8 @@
+/*§
+Any license
+*/
+
+//This source file must stay unchanged
+class MyClass {
+
+}

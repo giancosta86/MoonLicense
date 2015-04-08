@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<!--§
+  This is just a dummy license! ^__^
+  For product: %%%PRODUCT_NAME%%%.
+  Copyright holder: %%%COPYRIGHT_HOLDER%%%.
+  Copyright years: %%%COPYRIGHT_YEARS%%%.
+-->
+
+<!--
+This is another comment! ^__^
+-->
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+    </body>
+</html>

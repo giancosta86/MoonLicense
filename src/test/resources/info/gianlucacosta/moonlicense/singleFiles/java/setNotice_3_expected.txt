@@ -1,0 +1,12 @@
+/*§
+  This is just a dummy license! ^__^
+  For product: %%%PRODUCT_NAME%%%.
+  Copyright holder: %%%COPYRIGHT_HOLDER%%%.
+  Copyright years: %%%COPYRIGHT_YEARS%%%.
+*/
+
+package Test;
+
+public class Hello {
+
+}

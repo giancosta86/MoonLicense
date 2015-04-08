@@ -1,0 +1,12 @@
+/*§
+  This is just a dummy license! ^__^
+  For product: Any product
+  Copyright holder: Anyone
+  Copyright years: 2011
+*/
+
+package Test;
+
+public class Hello {
+
+}

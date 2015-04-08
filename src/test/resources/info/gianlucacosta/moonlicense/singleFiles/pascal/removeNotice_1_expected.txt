@@ -1,0 +1,7 @@
+(*
+This is another comment! ^__^
+*)
+program Hello;
+begin
+    writeln ('Hello, world.')
+end.

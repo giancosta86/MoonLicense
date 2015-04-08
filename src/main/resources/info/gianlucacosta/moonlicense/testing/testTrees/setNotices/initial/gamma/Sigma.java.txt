@@ -1,0 +1,4 @@
+//This file must stay unchanged
+class Sigma {
+
+}

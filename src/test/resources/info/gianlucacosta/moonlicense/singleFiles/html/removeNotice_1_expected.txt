@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<!--
+This is another comment! ^__^
+-->
+
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+
+    <body>
+    </body>
+</html>

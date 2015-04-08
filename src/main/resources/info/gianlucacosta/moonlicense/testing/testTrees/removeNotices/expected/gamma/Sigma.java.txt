@@ -1,0 +1,8 @@
+/*§
+Any license
+*/
+
+//This file must stay unchanged
+class Sigma {
+
+}

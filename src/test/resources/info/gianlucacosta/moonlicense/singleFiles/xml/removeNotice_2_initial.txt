@@ -1,0 +1,21 @@
+<!--§
+  This is just a dummy license! ^__^
+  For product: Any product.
+  Copyright holder: Gian.
+  Copyright years: 2011-2014.
+-->
+
+
+
+<!--
+This is another comment! ^__^
+-->
+
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+
+    <body>
+    </body>
+</html>

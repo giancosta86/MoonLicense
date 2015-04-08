@@ -1,0 +1,19 @@
+
+
+
+(*§
+  This is just a dummy license! ^__^
+  For product: Any product.
+  Copyright holder: Gian.
+  Copyright years: 2011-2014.
+*)
+
+
+
+(*
+This is another comment! ^__^
+*)
+program Hello;
+begin
+    writeln ('Hello, world.')
+end.

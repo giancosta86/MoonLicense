@@ -1,0 +1,14 @@
+
+
+/*§
+  This was, fairly simply, another license
+*/
+
+
+
+
+package Test;
+
+public class Hello {
+
+}

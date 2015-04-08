@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<!--
+This is another comment! ^__^
+-->
+
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+
+    <body>
+    </body>
+</html>

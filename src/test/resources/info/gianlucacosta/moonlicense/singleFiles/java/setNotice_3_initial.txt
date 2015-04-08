@@ -1,0 +1,18 @@
+
+
+
+/*§
+  This is another license
+  For product: Any product
+  Copyright holder: Any holder
+  Copyright years: 2011-2014.
+*/
+
+
+
+
+package Test;
+
+public class Hello {
+
+}

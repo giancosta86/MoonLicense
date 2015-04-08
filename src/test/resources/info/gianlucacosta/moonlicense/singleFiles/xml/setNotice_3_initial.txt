@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+
+<!--§
+  This was, fairly simply, another license
+-->
+
+
+
+<!--
+This is another comment! ^__^
+-->
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+
+
+/*§
+  This was, fairly simply, another license
+*/
+
+
+/*
+This is another comment! ^__^
+*/
+package Test;
+
+public class Hello {
+
+}

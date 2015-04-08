@@ -1,0 +1,11 @@
+(*§
+  This is just a dummy license! ^__^
+  For product: %%%PRODUCT_NAME%%%.
+  Copyright holder: %%%COPYRIGHT_HOLDER%%%.
+  Copyright years: %%%COPYRIGHT_YEARS%%%.
+*)
+
+program Hello;
+begin
+    writeln ('Hello, world.')
+end.

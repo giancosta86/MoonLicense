@@ -1,0 +1,18 @@
+
+
+
+/*§
+  This is just a dummy license! ^__^
+  For product: Any product.
+  Copyright holder: Gian.
+  Copyright years: 2011-2014.
+*/
+
+
+
+
+package Test;
+
+public class Hello {
+
+}

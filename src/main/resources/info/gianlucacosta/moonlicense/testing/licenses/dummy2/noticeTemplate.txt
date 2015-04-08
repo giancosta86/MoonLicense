@@ -1,0 +1,4 @@
+  This is just another dummy license! ^__^
+  For product: %%%PRODUCT_NAME%%%.
+  Copyright holder: %%%COPYRIGHT_HOLDER%%%.
+  Copyright years: %%%COPYRIGHT_YEARS%%%.

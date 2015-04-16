@@ -18,139 +18,66 @@
   ===========================================================================
 */
 
-plugins {
-    id 'com.jfrog.bintray' version '1.1'
+buildscript {
+    repositories {
+        maven {
+            url 'http://dl.bintray.com/giancosta86/Hephaestus'
+
+            jcenter()
+        }
+    }
+
+    dependencies {
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:1.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.1'
+        classpath 'info.gianlucacosta.aurora:aurora:1.0'
+    }
 }
 
 
 apply plugin: 'java'
-apply plugin: 'maven'
+apply plugin: 'info.gianlucacosta.aurora'
 
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense'
-version = '1.0'
+version = '1.1'
 
 description = 'Language-independent Java library for setting/removing license notices'
 
-sourceCompatibility = 1.8
 
+aurora {
+    docTask = 'javadoc'
+    gitHubUser = 'giancosta86'
 
-repositories {
-    jcenter()
+    author {
+        name = 'Gianluca Costa'
+        email = 'gianluca@gianlucacosta.info'
+    }
+
+    bintray {
+        user = project.bintrayUser
+        key = project.bintrayKey
+        repo = 'Hephaestus'
+        licenses = ['Apache-2.0']
+        labels = ['licenses', 'notices', 'source files', 'library', 'Java', 'language-independent', 'extensible']
+    }
 }
+
+
+moonLicense {
+    license = apache2
+
+    productInfo {
+        productName = 'MoonLicense'
+        inceptionYear = 2015
+        copyrightHolder = 'Gianluca Costa'
+    }
+
+    excludes << '^src/main/resources/.*/testing/.*'
+}
+
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-}
-
-
-task('sourcesJar', type: Jar, dependsOn: 'classes') {
-    classifier = 'sources'
-    from project.sourceSets.main.allSource
-}
-
-
-task('javadocJar', type: Jar, dependsOn: 'javadoc') {
-    classifier = 'javadoc'
-    from project.javadoc.destinationDir
-}
-
-
-artifacts {
-    archives project.sourcesJar
-    archives project.javadocJar
-}
-
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(
-                    url: "file://" + new File(project.buildDir, "mavenDeploy")
-            )
-
-            pom.project {
-                name project.name
-                description project.description
-
-                inceptionYear '2015'
-                url 'https://github.com/giancosta86/MoonLicense'
-
-
-                licenses {
-                    license {
-                        name 'Apache License, Version 2.0'
-                        url 'https://www.apache.org/licenses/LICENSE-2.0'
-                        distribution 'repo'
-                    }
-                }
-
-                developers {
-                    developer {
-                        name 'Gianluca Costa'
-                        email 'gianluca@gianlucacosta.info'
-                    }
-                }
-
-                scm {
-                    url 'git@github.com:giancosta86/MoonLicense.git'
-                    connection 'scm:git:git@github.com:giancosta86/MoonLicense.git'
-                    developerConnection 'scm:git:git@github.com:giancosta86/MoonLicense.git'
-                }
-
-            }
-        }
-    }
-}
-
-
-bintray {
-    if (project.hasProperty("bintrayKey")) {
-        user = bintrayUser
-        key = bintrayKey
-    }
-
-
-    filesSpec {
-        from('build/mavenDeploy') {
-            include "**/${project.version}/*.jar"
-            include "**/${project.version}/*.pom"
-        }
-        into '.'
-    }
-
-    dryRun = false
-    publish = false
-
-    pkg {
-        repo = 'Hephaestus'
-
-        name = project.name
-        desc = project.description
-
-        websiteUrl = 'https://github.com/giancosta86/MoonLicense'
-        issueTrackerUrl = 'https://github.com/giancosta86/MoonLicense/issues'
-        vcsUrl = 'https://github.com/giancosta86/MoonLicense.git'
-
-        licenses = ['Apache-2.0']
-        labels = ['licenses', 'notices', 'source files', 'library', 'Java', 'language-independent', 'extensible']
-
-        publicDownloadNumbers = false
-
-        version {
-            name = project.version
-            vcsTag = 'v' + project.version
-
-            released = new Date()
-
-            gpg {
-                sign = true
-            }
-
-            mavenCentralSync {
-                sync = false
-            }
-        }
-    }
 }

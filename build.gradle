@@ -22,9 +22,9 @@ buildscript {
     repositories {
         maven {
             url 'http://dl.bintray.com/giancosta86/Hephaestus'
-
-            jcenter()
         }
+
+        jcenter()
     }
 
     dependencies {

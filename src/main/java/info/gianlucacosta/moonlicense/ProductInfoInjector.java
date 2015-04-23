@@ -50,10 +50,10 @@ public class ProductInfoInjector {
 
         this.productInfo = productInfo;
 
-        copyrightYears = (currentYear == productInfo.getInceptionYear()) ?
-                String.valueOf(currentYear)
-                :
-                String.format("%d-%d", productInfo.getInceptionYear(), currentYear);
+        this.copyrightYears = new CopyrightYearsBuilder()
+                .setInceptionYear(productInfo.getInceptionYear())
+                .setCurrentYear(currentYear)
+                .toString();
     }
 
     /**

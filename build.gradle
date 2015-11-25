@@ -41,10 +41,11 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense'
-version = '1.2'
+version = '2.0'
 
 description = 'Language-independent Java library for setting/removing license notices'
 
+sourceCompatibility = '1.8'
 
 
 dependencies {

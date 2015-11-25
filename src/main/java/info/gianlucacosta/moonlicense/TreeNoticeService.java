@@ -51,7 +51,7 @@ public interface TreeNoticeService {
      * @param currentYear The current year, used, for example, while generating copyright info.
      * @throws IOException If an I/O error occurs.
      */
-    public void setNotices(File rootDir, int currentYear) throws IOException;
+    void setNotices(File rootDir, int currentYear) throws IOException;
 
     /**
      * Starting from the root directory, removes the license notice from every file matching one of the added
@@ -61,14 +61,14 @@ public interface TreeNoticeService {
      * @param rootDir The root directory.
      * @throws IOException If an I/O error occurs.
      */
-    public void removeNotices(File rootDir) throws IOException;
+    void removeNotices(File rootDir) throws IOException;
 
     /**
      * Adds a handler to be called just before a file is going to be opened for processing.
      *
      * @param handler The handler routine, taking just the file.
      */
-    public void addOnFileOpeningHandler(Consumer<Path> handler);
+    void addOnFileOpeningHandler(Consumer<Path> handler);
 
     /**
      * Adds a handler to be called just after the file has been processed, and <em>only</em> if the result
@@ -76,5 +76,5 @@ public interface TreeNoticeService {
      *
      * @param handler The handler routine, taking just the file.
      */
-    public void addOnFileWrittenHandler(Consumer<Path> handler);
+    void addOnFileWrittenHandler(Consumer<Path> handler);
 }

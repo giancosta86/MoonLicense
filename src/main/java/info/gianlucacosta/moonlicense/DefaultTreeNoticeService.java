@@ -23,6 +23,7 @@ package info.gianlucacosta.moonlicense;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -77,14 +78,14 @@ public class DefaultTreeNoticeService implements TreeNoticeService {
                 if (noticeFormat != null) {
                     onFileOpeningHandlers.forEach(handler -> handler.accept(relativeFilePath));
 
-                    String initialFileContent = new String(Files.readAllBytes(filePath));
+                    String initialFileContent = new String(Files.readAllBytes(filePath), charset);
 
                     String updatedFileContent = processFileContent(licensedFileSet, noticeFormat, initialFileContent);
 
                     if (!updatedFileContent.equals(initialFileContent)) {
                         Files.write(
                                 filePath,
-                                updatedFileContent.getBytes()
+                                updatedFileContent.getBytes(charset)
                         );
 
                         onFileWrittenHandlers.forEach(handler -> handler.accept(relativeFilePath));
@@ -104,6 +105,7 @@ public class DefaultTreeNoticeService implements TreeNoticeService {
 
     private final StringNoticeService stringNoticeService;
     private final boolean skipDotItems;
+    private final Charset charset;
 
     private final List<LicensedFileSet> licensedFileSets = new ArrayList<>();
 
@@ -115,10 +117,22 @@ public class DefaultTreeNoticeService implements TreeNoticeService {
      *
      * @param stringNoticeService The service whose operations will be applied to every matching file.
      * @param skipDotItems        Set to true if files and directories starting with "." must be skipped.
+     * @param charset             The charset
      */
-    public DefaultTreeNoticeService(StringNoticeService stringNoticeService, boolean skipDotItems) {
+    public DefaultTreeNoticeService(StringNoticeService stringNoticeService, boolean skipDotItems, Charset charset) {
         this.stringNoticeService = stringNoticeService;
         this.skipDotItems = skipDotItems;
+        this.charset = charset;
+    }
+
+    /**
+     * Creates the service with a default UTF-8 charset
+     *
+     * @param stringNoticeService The service whose operations will be applied to every matching file.
+     * @param skipDotItems        Set to true if files and directories starting with "." must be skipped.
+     */
+    public DefaultTreeNoticeService(StringNoticeService stringNoticeService, boolean skipDotItems) {
+        this(stringNoticeService, skipDotItems, Charset.forName("utf-8"));
     }
 
     @Override

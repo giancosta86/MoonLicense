@@ -43,8 +43,8 @@ import static org.junit.Assert.assertEquals;
 
 
 public class TreeNoticeServiceTest {
-    private static interface TestRunnable {
-        public void run() throws Exception;
+    private interface TestRunnable {
+        void run() throws Exception;
     }
 
     private final ProductInfo productInfo = new TestProductInfo();

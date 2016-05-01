@@ -26,8 +26,8 @@ MoonLicense is a Java library, but its *regex-based engine* supports a wide vari
 
 Further languages can be easily supported by creating custom formats.
 
-## Library architecture
 
+## Library architecture
 
 MoonLicense is written in Java, originally to be the kernel of [MoonLicense-Gradle](https://github.com/giancosta86/MoonLicense-Gradle) - its plugin for Gradle - but it can be used as a full-fledged, standalone library.
 
@@ -70,4 +70,3 @@ Special thanks to great tools which I used a lot and which inspired my work:
 
 * [License Maven Plugin](http://mojo.codehaus.org/license-maven-plugin/)
 * [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)
-

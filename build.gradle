@@ -29,8 +29,8 @@ buildscript {
 
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
-        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.0'
-        classpath 'info.gianlucacosta.aurora:aurora:4.1'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.1'
+        classpath 'info.gianlucacosta.aurora:aurora:5.1'
     }
 }
 
@@ -45,7 +45,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense'
-version = '2.1'
+version = '2.2'
 
 description = 'Language-independent Java library for setting/removing license notices'
 
@@ -56,6 +56,19 @@ sourceCompatibility = '1.8'
 
 dependencies {
     testCompile 'junit:junit:4.11'
+}
+
+
+moonLicense {
+    license = apache2
+
+    productInfo {
+        productName = 'MoonLicense'
+        inceptionYear = 2015
+        copyrightHolder = 'Gianluca Costa'
+    }
+
+    excludes << '^src/main/resources/.*/testing/.*'
 }
 
 
@@ -70,19 +83,14 @@ aurora {
     bintray {
         repo = 'Hephaestus'
         licenses = ['Apache-2.0']
-        labels = ['licenses', 'notices', 'source files', 'library', 'Java', 'language-independent', 'extensible']
+        labels = [
+                'licenses',
+                'notices',
+                'source files',
+                'library',
+                'Java',
+                'language-independent',
+                'extensible'
+        ]
     }
-}
-
-
-moonLicense {
-    license = apache2
-
-    productInfo {
-        productName = 'MoonLicense'
-        inceptionYear = 2015
-        copyrightHolder = 'Gianluca Costa'
-    }
-
-    excludes << '^src/main/resources/.*/testing/.*'
 }

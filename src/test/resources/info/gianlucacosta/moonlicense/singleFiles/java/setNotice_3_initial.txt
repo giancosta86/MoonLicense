@@ -1,7 +1,7 @@
 
 
 
-/*§
+/*^
   This is another license
   For product: Any product
   Copyright holder: Any holder

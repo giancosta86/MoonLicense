@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
  * Notice format for languages supporting Pascal comments - including OCaml.
  */
 public class PascalNoticeFormat extends DefaultNoticeFormat {
-    private static final Pattern licensePattern = Pattern.compile("(?s)^()\\s*(\\(\\*§.*?\\*\\))\\s*()");
+    private static final Pattern licensePattern = Pattern.compile("(?s)^()\\s*(\\(\\*[§^].*?\\*\\))\\s*()");
 
     @Override
     public Matcher matchNotice(String content) {
@@ -43,7 +43,7 @@ public class PascalNoticeFormat extends DefaultNoticeFormat {
 
     @Override
     public String formatNotice(String notice) {
-        return String.format("(*§%s%s*)%s%s",
+        return String.format("(*^%s%s*)%s%s",
                 lineSeparator,
                 notice,
                 lineSeparator,

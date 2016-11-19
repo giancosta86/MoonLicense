@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
  * In particular, it preserves any DOCTYPE declaration at the beginning, to comply with the standard.
  */
 public class HtmlNoticeFormat extends DefaultNoticeFormat {
-    private static final Pattern licensePattern = Pattern.compile("(?s)^\\s*((?:<!DOCTYPE [^>]+>(?:\r?\n){0,2})?)\\s*(<!--§.*?-->)()\\s*");
+    private static final Pattern licensePattern = Pattern.compile("(?s)^\\s*((?:<!DOCTYPE [^>]+>(?:\r?\n){0,2})?)\\s*(<!--[§^].*?-->)()\\s*");
     private static final Pattern doctypePattern = Pattern.compile("(?s)^\\s*<!DOCTYPE [^>]+>\\s*");
 
     @Override
@@ -52,7 +52,7 @@ public class HtmlNoticeFormat extends DefaultNoticeFormat {
 
     @Override
     public String formatNotice(String notice) {
-        return String.format("<!--§%s%s-->%s%s",
+        return String.format("<!--^%s%s-->%s%s",
                 lineSeparator,
                 notice,
                 lineSeparator,

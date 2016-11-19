@@ -1,4 +1,4 @@
-/*§
+/*^
   This is just a dummy license! ^__^
   For product: Another product
   Copyright holder: Another copyright holder

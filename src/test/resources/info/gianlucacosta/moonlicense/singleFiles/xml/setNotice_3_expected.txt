@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<!--§
+<!--^
   This is just a dummy license! ^__^
   For product: %%%PRODUCT_NAME%%%.
   Copyright holder: %%%COPYRIGHT_HOLDER%%%.

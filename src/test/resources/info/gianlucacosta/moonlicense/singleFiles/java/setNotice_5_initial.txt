@@ -1,6 +1,6 @@
 
 
-/*§
+/*^
   This was, fairly simply, another license
 */
 

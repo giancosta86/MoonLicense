@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 
-<!--§
+<!--^
   This was, fairly simply, another license
 -->
 

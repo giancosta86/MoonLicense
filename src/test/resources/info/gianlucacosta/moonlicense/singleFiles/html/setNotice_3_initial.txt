@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<!--§
+<!--^
   This was, fairly simply, another license
 -->
 

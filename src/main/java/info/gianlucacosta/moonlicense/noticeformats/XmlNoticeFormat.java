@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
  * In particular, it preserves the XML declaration at the beginning, to comply the standard.
  */
 public class XmlNoticeFormat extends DefaultNoticeFormat {
-    private static final Pattern licensePattern = Pattern.compile("(?s)^\\s*((?:<\\?xml [^>]+\\?>(?:\r?\n){0,2})?)\\s*(<!--§.*?-->)()\\s*");
+    private static final Pattern licensePattern = Pattern.compile("(?s)^\\s*((?:<\\?xml [^>]+\\?>(?:\r?\n){0,2})?)\\s*(<!--[§^].*?-->)()\\s*");
     private static final Pattern xmlPattern = Pattern.compile("(?s)^\\s*<\\?xml [^>]+\\?>\\s*");
 
     @Override
@@ -52,7 +52,7 @@ public class XmlNoticeFormat extends DefaultNoticeFormat {
 
     @Override
     public String formatNotice(String notice) {
-        return String.format("<!--§%s%s-->%s%s",
+        return String.format("<!--^%s%s-->%s%s",
                 lineSeparator,
                 notice,
                 lineSeparator,
